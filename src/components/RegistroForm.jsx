@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { supabase } from '../supabaseClient';
 import { 
   Thermometer, Droplets, Bug, Save, Weight, Activity, 
@@ -13,6 +13,7 @@ const RegistroForm = () => {
   const [formAcuaponia, setFormAcuaponia] = useState({ ph_agua: '', temp_agua: '', oxigeno_disuelto: '', amoniaco: '', nitritos: '', nitratos: '', nivel_agua: '', salud_peces: 'Buena', id_tanque: '', observaciones: '' });
   const [formHidroponia, setFormHidroponia] = useState({ ph_solucion: '', ec_conductividad: '', tds: '', temp_solucion: '', temp_ambiente: '', humedad: '', horas_luz: '', id_sistema: '', observaciones: '' });
 
+  
   const limpiarParaBD = (obj) => {
     const limpio = {};
     Object.keys(obj).forEach(key => {
@@ -111,3 +112,4 @@ const RegistroForm = () => {
 };
 
 export default RegistroForm;
+
